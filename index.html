@@ -23,6 +23,13 @@
             margin: 0;
         }
         </style>
+	<style>
+    /* Ovdje staviš stil */
+    #map {
+      height: 100vh; /* visina: cijeli ekran */
+      width: 100%;   /* širina: 100% roditeljskog elementa */
+    }
+  </style>
         <title>Preglednik - Marine Republike Hrvatske</title>
                 <style>
     .leaflet-control.abstract {
@@ -78,15 +85,14 @@
         <script src="data/upanije_3.js"></script>
         <script src="data/Marine_4.js"></script>
         <script>
+	var bounds = [[42, 12], [47, 20]]; // okvir Hrvatske
         var map = L.map('map', {
             zoomControl:false, maxZoom:18, minZoom:6
-        }).fitBounds([[39.192863242782934,8.139268155197115],[48.8110588768525,27.039151540190833]]);
+        }).fitBounds();
         var Esri_WorldImagery = L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 18,
     attribution: 'Tiles © Esri'
 }).addTo(map);
-var bounds = [[42, 12], [47, 20]]; // okvir Hrvatske
-map.setView([43, 17], 5);
         var hash = new L.Hash(map);
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
