@@ -80,13 +80,13 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:18, minZoom:6
-        }).fitBounds([[39.192863242782934,11.139268155197115],[48.8110588768525,25.039151540190833]]);
+        }).fitBounds([[39.192863242782934,8.139268155197115],[48.8110588768525,27.039151540190833]]);
         var Esri_WorldImagery = L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 18,
     attribution: 'Tiles © Esri'
 }).addTo(map);
-var bounds = [[42.2, 13.5], [46.6, 20]]; // okvir Hrvatske
-map.setView([43.5, 16.5], 6);
+var bounds = [[42.2, 12], [46.6, 20]]; // okvir Hrvatske
+map.setView([43, 16.5], 5);
         var hash = new L.Hash(map);
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // remove popup's row if "visible-with-data"
